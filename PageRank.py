@@ -5,7 +5,7 @@ import matplotlib.pylab as plt
 #PageRank is an algorithm used by google Search to rank web pages
 
 n=6
-Pg = np.array([[0, 0, 0, 0.5, 0.5, 0],
+Pg = np.array([[0, 0, 0, 0.5, 0.5, 0],              #matrix representing web pages links grapg
                [0, 0, 0.5, 0, 0.0, 0.5],
                [0, 1, 0, 0, 0, 0],
                [1, 0, 0, 0, 0, 0],
@@ -16,7 +16,7 @@ Jm=np.array([[1]*n]*n)
 
 alfa = 1
 for a in np.arange(0, alfa, 0.05):
-    Mg = (1 - a) * Pg + (a / n) * Jm
+    Mg = (1 - a) * Pg + (a / n) * Jm                #Google matrix
     Mgmul = np.matmul(Mg, Mg)
     for b in range(0, 1000):
         Mgmul = np.matmul(Mgmul, Mg)
